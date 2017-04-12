@@ -12,11 +12,11 @@ public class CargarEmpresas extends ApiaAbstractClass{
 		// TODO Auto-generated method stub
 		Attribute attEmpresas = this.getCurrentEntity().getAttribute("P5_DOCUNI_EMPRESA_FACTURA");
 		
-		PossibleValue pos1 = new PossibleValue("Groove", "Aprobado");
-		PossibleValue pos2 = new PossibleValue("No Aprobado", "NO Aprobado");
+		PossibleValue posMautibla = new PossibleValue("Mautibla", "Mautibla");
+		PossibleValue posGroove = new PossibleValue("Groove", "Groove");
 		
-		attAprobacion.addPossibleValues(pos1);
-		attAprobacion.addPossibleValues(pos2);	
+		attEmpresas.addPossibleValues(posMautibla);
+		attEmpresas.addPossibleValues(posGroove);	
 	}
 
 }
