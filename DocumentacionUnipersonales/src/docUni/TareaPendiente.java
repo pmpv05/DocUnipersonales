@@ -1,4 +1,4 @@
-package docUniTesting;
+package docUni;
 
 import java.util.Collection;
 

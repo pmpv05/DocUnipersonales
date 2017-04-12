@@ -1,4 +1,4 @@
-package docUniTesting;
+package docUni;
 
 import com.dogma.busClass.ApiaAbstractClass;
 import com.dogma.busClass.BusClassException;
