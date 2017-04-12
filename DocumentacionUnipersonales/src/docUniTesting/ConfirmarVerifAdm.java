@@ -12,15 +12,14 @@ public class ConfirmarVerifAdm extends ApiaAbstractClass{
 		// TODO Auto-generated method stub
 		Entity currEnt = this.getCurrentEntity();
 		
-		User creador = this.getCurrentProcess().getCreator();
-		String nombreCreador = creador.getName();
-		String mailCreador = creador.getEmail();
+		User usuario = this.getUser(currEnt.getAttribute("P5_DOCUNI_USER").getValueAsString());
+		String mailUsuario = usuario.getEmail();
 		
 		String comentarios = currEnt.getAttribute("P5_DOCUNI_COMENTARIOS_ADM").getValueAsString();
 		String docOk = currEnt.getAttribute("P5_DOCUNI_DOCUMENTOS_OK").getValueAsString();
 		
 		if(docOk.compareTo("true") == 0){
-			Helpers.notificarDocumentosOk(this, nombreCreador, mailCreador, comentarios);
+			Helpers.notificarDocumentosOk(this, mailUsuario, comentarios);
 		}
 	}
 
