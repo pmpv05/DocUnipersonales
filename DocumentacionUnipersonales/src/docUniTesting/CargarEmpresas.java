@@ -16,7 +16,7 @@ public class CargarEmpresas extends ApiaAbstractClass{
 		PossibleValue posGroove = new PossibleValue("Groove", "Groove");
 		
 		attEmpresas.addPossibleValues(posMautibla);
-		attEmpresas.addPossibleValues(posGroove); 	
+		attEmpresas.addPossibleValues(posGroove);  	
 	}
 
 }
