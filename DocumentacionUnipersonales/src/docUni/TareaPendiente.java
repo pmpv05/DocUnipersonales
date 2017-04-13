@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import com.dogma.busClass.ApiaAbstractClass;
 import com.dogma.busClass.BusClassException;
+import com.dogma.busClass.object.Attribute;
 import com.dogma.busClass.object.Entity;
 import com.dogma.busClass.object.Task;
 import com.dogma.busClass.object.User;
@@ -21,6 +22,7 @@ public class TareaPendiente extends ApiaAbstractClass {
 				.getValueAsString();
 		String comentarios = currEnt.getAttribute("P5_DOCUNI_COMENTARIOS_ADM")
 				.getValueAsString();
+		
 
 		if (currTsk.getTaskName().compareTo("P5_DOCUNI_SUBIR_DOC") == 0) {
 			if (otraVez.compareTo("true") == 0) {
@@ -39,6 +41,7 @@ public class TareaPendiente extends ApiaAbstractClass {
 				String mail = u.getEmail();
 				Helpers.notificarTareaPendiente(this, mail);
 			}
+			currEnt.getAttribute("P5_DOCUNI_COMENTARIOS_ADM").clear();
 		}
 	}
 

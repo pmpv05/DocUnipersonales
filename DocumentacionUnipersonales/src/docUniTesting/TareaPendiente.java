@@ -39,6 +39,7 @@ public class TareaPendiente extends ApiaAbstractClass {
 				String mail = u.getEmail();
 				Helpers.notificarTareaPendiente(this, mail);
 			}
+			currEnt.getAttribute("P5_DOCUNI_COMENTARIOS_ADM").clear();
 		}
 	}
 
