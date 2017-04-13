@@ -14,7 +14,7 @@ public class EmpezarProceso extends ApiaAbstractClass {
 		// TODO Auto-generated method stub
 		// for de todos los usuarios del grupo
 
-		Collection<User> users = this.getGroup("UNIPERSONALES_TESTING")
+		Collection<User> users = this.getGroup("UNIPERSONALES")
 				.getUsers();
 
 		for (User u : users) {
