@@ -8,7 +8,7 @@ public class Helpers {
 	public static void notificarDocumentosOk(ApiaAbstractClass apia,
 			String mail, String comentarios) throws BusClassException {
 
-		String link = "http://proyectos.fx2.com.uy:8080/Apia/";
+		String link = "http://apia.fx2.com.uy:8080/Apia/";
 
 		String[] mailEnviar = { mail };
 		apia.sendMail(
@@ -26,7 +26,7 @@ public class Helpers {
 	public static void notificarTareaPendiente(ApiaAbstractClass apia,
 			String mail) throws BusClassException {
 
-		String link = "http://proyectos.fx2.com.uy:8080/Apia/";
+		String link = "http://apia.fx2.com.uy:8080/Apia/";
 
 		String[] mailEnviar = { mail };
 		apia.sendMail(
@@ -45,7 +45,7 @@ public class Helpers {
 	public static void notificarSubirDocNuevamente(ApiaAbstractClass apia,
 			String mail, String comentarios) throws BusClassException {
 
-		String link = "http://proyectos.fx2.com.uy:8080/Apia/";
+		String link = "http://apia.fx2.com.uy:8080/Apia/";
 
 		String[] mailEnviar = { mail };
 		apia.sendMail(
