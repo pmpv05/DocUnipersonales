@@ -2,6 +2,7 @@ package docUni;
 
 import com.dogma.busClass.ApiaAbstractClass;
 import com.dogma.busClass.BusClassException;
+import com.dogma.busClass.object.Entity;
 import com.dogma.busClass.object.User;
 
 public class ConfirmarSubirDoc extends ApiaAbstractClass{
@@ -9,11 +10,17 @@ public class ConfirmarSubirDoc extends ApiaAbstractClass{
 	@Override
 	protected void executeClass() throws BusClassException {
 		// TODO Auto-generated method stub
+		Entity currEnt = this.getCurrentEntity();
 		User usuarioActual = this.getCurrentUser();
-		String usuarioNombre = usuarioActual.getName();
+		String login = usuarioActual.getLogin();
+		String nombre = usuarioActual.getName();
 		
-		this.getCurrentEntity().getAttribute("P5_DOCUNI_PERSONA").setValue(usuarioNombre);
-		this.getCurrentEntity().getAttribute("P5_DOCUNI_USER").setValue(usuarioActual.getLogin());
+		if(login.compareToIgnoreCase("busClass") != 0) { //No se completa automáticamente.
+			currEnt.getAttribute("P5_DOCUNI_USER").setValue(login);
+			currEnt.getAttribute("P5_DOCUNI_PERSONA").setValue(nombre);
+		} else { //Se completó automáticamente
+			//Se mantienen datos anteriores.
+		}
 	}
 
 }

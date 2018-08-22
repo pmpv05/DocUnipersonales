@@ -13,14 +13,22 @@ public class EmpezarProceso extends ApiaAbstractClass {
 	protected void executeClass() throws BusClassException {
 		// TODO Auto-generated method stub
 		// for de todos los usuarios del grupo
-
+		String login;
+		String nombreUser;
+		
 		Collection<User> users = this.getGroup("UNIPERSONALES_TESTING")
 				.getUsers();
 
 		for (User u : users) {
+			login = u.getLogin();
+			nombreUser = u.getName();
 			Process newPro = this
 					.createCreationProcess("DOCUMENTACION_UNIPERSONALES");
-			newPro.setRol("DOC", u.getLogin());
+			newPro.setRol("DOC", login);
+			
+			newPro.getEntity().getAttribute("P5_DOCUNI_USER").setValue(login);
+			newPro.getEntity().getAttribute("P5_DOCUNI_PERSONA").setValue(nombreUser);
+			
 			newPro.persist();
 		}
 	}
