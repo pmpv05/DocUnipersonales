@@ -5,7 +5,7 @@ import com.dogma.busClass.BusClassException;
 import com.dogma.busClass.object.Entity;
 import com.dogma.busClass.object.User;
 
-public class ConfirmarSubirDoc extends ApiaAbstractClass{
+public class ConfirmarSubirDoc extends ApiaAbstractClass {
 
 	@Override
 	protected void executeClass() throws BusClassException {
@@ -14,12 +14,12 @@ public class ConfirmarSubirDoc extends ApiaAbstractClass{
 		User usuarioActual = this.getCurrentUser();
 		String login = usuarioActual.getLogin();
 		String nombre = usuarioActual.getName();
-		
-		if(login.compareToIgnoreCase("busClass") != 0) { //No se completa automáticamente.
+
+		if (login.compareToIgnoreCase("busClass") != 0) { // No se completa automáticamente.
 			currEnt.getAttribute("P5_DOCUNI_USER").setValue(login);
 			currEnt.getAttribute("P5_DOCUNI_PERSONA").setValue(nombre);
-		} else { //Se completó automáticamente
-			//Se mantienen datos anteriores.
+		} else { // Se completó automáticamente
+			// Se mantienen datos anteriores.
 		}
 	}
 

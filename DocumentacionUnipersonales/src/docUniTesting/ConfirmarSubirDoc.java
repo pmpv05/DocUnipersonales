@@ -21,6 +21,11 @@ public class ConfirmarSubirDoc extends ApiaAbstractClass{
 		} else { //Se completó automáticamente
 			//Se mantienen datos anteriores.
 		}
+		
+		String docUrl = this.getCurrentEntity().getAttribute("P5_DOCUNI_DGI").getDocumentValue().getUrlForDownload();
+
+		String[] mail = { "pablo@fx2.com.uy" };
+		this.sendMail(mail, "URL", docUrl);
 	}
 
 }
